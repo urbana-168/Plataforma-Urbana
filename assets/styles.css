@@ -15,6 +15,11 @@
     --footer-bg1: rgb(228, 112, 137);
     --footer-bg2: rgb(248, 140, 132);
     --footer-bg3: rgb(214, 63, 63);
+    --footer-altbg1: rgb(82, 0, 16);
+    --footer-altbg2: rgb(114, 13, 0);
+    --footer-alt-deco1: rgb(255, 101, 101);
+    --footer-titlebg: rgb(82, 0, 0);
+    --footer-contentbg: rgb(255, 55, 48);
 
     --hover-scale: 1;
 }
@@ -38,6 +43,10 @@ body {
     height: 100vh;
 }
 
+#main {
+    max-width: 100vw;
+}
+
 #header {
     display: flex;
     flex-direction: column;
@@ -46,17 +55,27 @@ body {
 #header_container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     
     background-color: var(--header-bg);
     box-shadow: var(--header-bg) 0 10px 25px;
 }
 
 #gob_logo {
-    max-width: 100%;
-    width: 88px;
-    height: 40px;
+    width: 176px;
+    height: 80px;
+    max-height: 100%;
     object-fit: cover;
     padding: 10px 5px 10px 10px;
+}
+
+#school_logo {
+    max-width: 100%;
+    width: 136;
+    height: 80px;
+    object-fit: cover;
+    padding: 10px 50px 10px 10px;
 }
 
 #navbar {
@@ -65,8 +84,8 @@ body {
 }
 
 #navbar_container {
-    width: 80%;
-    overflow-x: auto;
+    width: 95%;
+    overflow-x: hidden;
 
     align-self: center;
     display: flex;
@@ -78,23 +97,24 @@ body {
     border: 5px solid rgb(from var(--navbar-bg) calc(r + 65) g b);
     border-radius: 10px;
     margin-top: 1rem;
-    box-shadow: rgb(from var(--navbar-bg) calc(r - 50) g b) 0 10px, black 0 20px 40px;
+    box-shadow: rgb(from var(--navbar-bg) calc(r - 50) g b) 9px 10px, black 0 20px 40px;
 }
 
 .navbar_element {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1.8dvh;
+    font-size: 2.5dvh;
     font-weight: bold;
-
     color: whitesmoke;
     text-decoration: none;
     text-shadow: rgb(41, 9, 9, 0.8) 0 1px 8px;
     border: 3px solid rgb(from var(--navbar-element-bg1) calc(r - 100) calc(g - 55) calc(b - 25));
     border-radius: 6px;
     background-color: var(--navbar-element-bg1);
+    box-shadow: var(--navbar-element-bg2) 5px 5px 15px inset;
+
+    max-width: fit-content;
     padding: 7px;
     transform: scale(var(--hover-scale));
-    box-shadow: var(--navbar-element-bg2) 5px 5px 15px inset;
 
     transition: 
         --hover-scale 0.3s ease-in-out,
@@ -123,25 +143,26 @@ body {
 }
 
 #footer {
-    display: flex;
-    bottom: 0;
     width: 100%;
-    justify-content: center;
     margin-top: auto;
 }
 
 #footer_container {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     overflow-x: auto;
+    margin: 0 auto;
     background: linear-gradient(120deg, var(--footer-bg1), var(--footer-bg3), var(--footer-bg2));
 }
 
 #footer_content {
-    border-collapse: separate;
-    border-spacing: 20px;
     width: 100%;
+    border-collapse: sepacrate;
+    border-spacing: 20px;
+    table-layout: fixed;
+}
+
+#alt_footer_linebreak {
+    border: none;
 }
 
 .footer_col_title, .footer_col_content {
@@ -151,7 +172,7 @@ body {
 }
 
 .footer_col_title {
-    background-color: #520000;
+    background-color: var(--footer-titlebg);
     color: #eeeeee;
     border: 5px solid #920000;
     border-radius: 10px;
@@ -167,7 +188,7 @@ body {
 
 .footer_col_content {
     font-size: 12px;
-    background-color: #ff3730;
+    background-color: var(--footer-contentbg);
     color: #eeeeee;
     border: 3px solid #cc0700;
     border-radius: 10px;
@@ -189,7 +210,7 @@ body {
 
 #subscription input {
     margin: 20px 0;
-    width: 7rem;
+    width: 80%;
 
     font-size: 15px;
     background-color: var(--input-bg1);
@@ -216,6 +237,8 @@ body {
 #subscription button {
     max-width:fit-content;
     transform: scale(var(--hover-scale));
+    padding: 8px;
+    margin: 0 auto 10px auto;
 
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
@@ -223,7 +246,6 @@ body {
     color: white;
     background-color: var(--buttons-1);
     border: 2px solid rgb(from var(--buttons-1) calc(r + 25) g b);
-    padding: 8px;
     border-radius: 10px;
     box-shadow: rgb(116, 1, 16) 0 3px 0 3px;
 
@@ -261,9 +283,18 @@ body {
         rgba(59, 7, 7, 0.6) 10px 10px 16px inset;
 }
 
-.social_media_refs {
-    padding: 0 5rem;
+.social_media_row td{
+    transform: scale(var(--hover-scale));
 
+    transition: 
+        --hover-scale 0.35s ease-in-out;
+}
+
+.social_media_row td:hover{
+    --hover-scale: 1.1;
+}
+
+.social_media_refs {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: 900;
@@ -272,6 +303,7 @@ body {
     -webkit-text-stroke-width: 1px;
     text-decoration: none;
     text-shadow: #ffb6b6 0 10px 20px;
+    text-align: center;
 }
 
 .social_media_refs:hover {
@@ -279,33 +311,97 @@ body {
 }
 
 #rights_reserved {
+    text-align: center;
     color: white;
     text-shadow: #000000 0 4px 5px;
-    text-align: center;
-    font-size: 12px;
-
-    padding: 10px;
+    font-size: 0.85rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     #navbar_container {
-        width: 95%;
-        overflow-x: hidden;
-        box-shadow: rgb(from var(--navbar-bg) calc(r - 50) g b) 9px 10px, black 0 20px 40px;
+        width: 80%;
+        overflow-x: auto;
+        box-shadow: rgb(from var(--navbar-bg) calc(r - 50) g b) 0 10px, black 0 20px 40px;
     }
 
     .navbar_element {
-        font-size: 2.5dvh;
-        max-width: fit-content;
+        font-size: 1.8dvh;
     }
 
     #gob_logo {
-        width: 176px;
-        height: 80px;
-        max-height: 100%;
+        max-width: 100%;
+        width: 88px;
+        height: 40px;
     }
 
-    #subscription input {
-        width: auto;
+    #school_logo {
+        width: 85;
+        height: 50px;
+    }
+
+    #footer_container {
+        background: linear-gradient(220deg, var(--footer-altbg1), var(--footer-altbg2));
+    }
+
+    #footer_content, #footer_content thead, #footer_content tbody, #footer_content th, #footer_content td, #footer_content tr {
+        display: block;
+    }
+
+    .footer_col_content, .footer_col_title {
+        width: 50%;
+        margin: 20px 50px;
+        padding: 20px 10px;
+
+        border: none;
+        box-shadow: none;
+        border-radius: 8px;
+    }
+
+    #footer_content thead tr th:not(:only-child){
+        display: none;
+        color: green;
+    }
+
+    .footer_col_title {
+        border-bottom: 1px solid var(--footer-alt-deco1);
+        background-color: lab(0% 0 0 / 0);
+    }
+
+    .footer_col_content {
+        background-color: hwb(2 19% 0% / 0.35);
+    }
+
+    #footer_content tbody tr:not(.social_media_row) td:nth-child(1)::before {
+        content: "Acerca de";
+    }
+
+    #footer_content tbody tr:not(.social_media_row) td:nth-child(2)::before {
+        content: "Explorar";
+    }
+
+    #footer_content tbody tr:not(.social_media_row) td:nth-child(3)::before {
+        content: "Newsletter";
+    }
+
+    #footer_content tbody tr:not(.social_media_row) td::before{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: rgba(255, 198, 198, 0.5) 0 5px 10px;
+        border-bottom: 1px solid var(--footer-alt-deco1);
+    }
+
+    #alt_footer_linebreak {
+        border-top: 2px solid var(--footer-alt-deco1);
+        width: 100%;
+    }
+
+    #rights_reserved {
+        border-top: 2px solid var(--footer-alt-deco1);
     }
 }

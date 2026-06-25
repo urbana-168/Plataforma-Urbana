@@ -89,18 +89,29 @@ body {
     text-shadow: rgb(41, 9, 9, 0.8) 0 1px 8px;
     border: 3px solid rgb(from var(--navbar-element-bg1) calc(r - 100) calc(g - 55) calc(b - 25));
     border-radius: 6px;
-    background: linear-gradient(150deg, var(--navbar-element-bg1), var(--navbar-element-bg2));
+    background-color: var(--navbar-element-bg1);
     padding: 7px;
     transform: scale(var(--hover-scale));
+    box-shadow: var(--navbar-element-bg2) 5px 5px 15px inset;
 
     transition: 
         --hover-scale 0.3s ease-in-out,
-        box-shadow 0.4s ease-in;
+        box-shadow 0.2s ease-in;
 }
 
 .navbar_element:hover {
-    --hover-scale: 1.2;
-    box-shadow: rgba(0, 0, 0, 0.5) 10px 7px 20px;
+    --hover-scale: 1.1;
+    box-shadow:
+    var(--navbar-element-bg2) 5px 5px 15px inset,
+        rgba(0, 0, 0, 0.5) 10px 7px 20px;
+}
+
+.navbar_element:active {
+    --hover-scale: 0.9;
+    background-color: rgb(from var(--navbar-bg) calc(r - 55) g b);
+    box-shadow:
+        var(--navbar-element-bg1) -5px -5px 15px inset,
+        rgba(0, 0, 0, 0.5) 10px 7px 20px;
 }
 
 #body {
@@ -142,7 +153,7 @@ body {
     color: #eeeeee;
     border: 5px solid #920000;
     border-radius: 10px;
-    font-size: 32px;
+    font-size: 24px;
     text-shadow: rgba(255, 85, 85, 0.8) 5px 5px 10px;
     box-shadow: 
         rgba(0, 0, 0, 0.6) 0 10px 15px,
@@ -153,7 +164,7 @@ body {
 }
 
 .footer_col_content {
-    font-size: 16px;
+    font-size: 12px;
     background-color: #ff3730;
     color: #eeeeee;
     border: 3px solid #cc0700;
@@ -182,15 +193,20 @@ body {
     border-width: 5px;
     border-style: solid;
     border-radius: 5px;
+    color: white;
 
-    transition: 
+    transition:
+        color 0.2s ease-in-out,
         border-color 0.2s ease-in-out,
-        background-color 0.3s ease;
+        background-color 0.3s ease,
+        box-shadow 0.3s ease-in;
 }
 
 #subscription input:hover, #subscription input:focus {
+    color: black;
     background-color: var(--input-bg2);
     border-color: rgb(from var(--input-bg1) calc(r + 135) calc(g + 80) calc(b + 100));
+    box-shadow: rgba(0,0,0,0.6) 0 10px 15px;
 }
 
 #subscription button {
@@ -199,7 +215,7 @@ body {
 
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: white;
     background-color: var(--buttons-1);
     border: 2px solid rgb(from var(--buttons-1) calc(r + 25) g b);
@@ -215,10 +231,16 @@ body {
 
 #subscription button:hover {
     --hover-scale: 1.2;
+
+    cursor: pointer;
     box-shadow:
         rgb(116, 1, 16) 0 3px 0 3px,
         rgb(0,0,0,0.6) 0 7px 10px 5px;
     text-shadow: rgba(255, 255, 255, 0.5) 0 3px 10px;
+}
+
+#subscription button:active {
+    --hover-scale: 0.9;
 }
 
 .footer_col_content:hover {
@@ -239,7 +261,7 @@ body {
     padding: 0 5rem;
 
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 900;
     color: rgb(255, 255, 255);
     -webkit-text-stroke-color: #c40d0d;
@@ -256,5 +278,7 @@ body {
     color: white;
     text-shadow: #000000 0 4px 5px;
     text-align: center;
-    padding: 20px;
+    font-size: 12px;
+
+    padding: 10px;
 }

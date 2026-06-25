@@ -53,8 +53,8 @@ body {
 
 #gob_logo {
     max-width: 100%;
-    width: 176px;
-    height: 80px;
+    width: 88px;
+    height: 40px;
     object-fit: cover;
     padding: 10px 5px 10px 10px;
 }
@@ -65,7 +65,9 @@ body {
 }
 
 #navbar_container {
-    width: 95%;
+    width: 80%;
+    overflow-x: auto;
+
     align-self: center;
     display: flex;
     flex-direction: row;
@@ -76,12 +78,12 @@ body {
     border: 5px solid rgb(from var(--navbar-bg) calc(r + 65) g b);
     border-radius: 10px;
     margin-top: 1rem;
-    box-shadow:  rgb(from var(--navbar-bg) calc(r - 50) g b) 9px 10px, black 0 20px 40px;
+    box-shadow: rgb(from var(--navbar-bg) calc(r - 50) g b) 0 10px, black 0 20px 40px;
 }
 
 .navbar_element {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 2.5dvh;
+    font-size: 1.8dvh;
     font-weight: bold;
 
     color: whitesmoke;
@@ -131,6 +133,7 @@ body {
 #footer_container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     overflow-x: auto;
     background: linear-gradient(120deg, var(--footer-bg1), var(--footer-bg3), var(--footer-bg2));
@@ -186,8 +189,10 @@ body {
 }
 
 #subscription input {
-    font-size: 15px;
     margin: 20px 0;
+    width: 7rem;
+
+    font-size: 15px;
     background-color: var(--input-bg1);
     border-color: rgb(from var(--input-bg1) calc(r - 35) g b);
     border-width: 5px;
@@ -281,4 +286,27 @@ body {
     font-size: 12px;
 
     padding: 10px;
+}
+
+@media (min-width: 768px) {
+    #navbar_container {
+        width: 95%;
+        overflow-x: hidden;
+        box-shadow: rgb(from var(--navbar-bg) calc(r - 50) g b) 9px 10px, black 0 20px 40px;
+    }
+
+    .navbar_element {
+        font-size: 2.5dvh;
+        max-width: fit-content;
+    }
+
+    #gob_logo {
+        width: 176px;
+        height: 80px;
+        max-height: 100%;
+    }
+
+    #subscription input {
+        width: auto;
+    }
 }

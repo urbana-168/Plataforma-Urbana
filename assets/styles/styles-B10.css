@@ -1,0 +1,34 @@
+:root {
+    --main-bg: rgb(255, 177, 177);
+
+    --hover-scale: 1;
+}
+
+    @property --hover-scale {
+        syntax: '<number>';
+        inherits: false;
+        initial-value: 1;
+    }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--main-bg);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#main {
+    max-width: 100vw;
+}
+
+#body {
+    display: flex;
+    flex: 1;
+    height: 50rem;
+}

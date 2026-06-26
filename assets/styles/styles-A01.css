@@ -1,0 +1,114 @@
+:root {
+    --main-bg: rgb(255, 177, 177);
+
+    --navbar-bg: rgb(117, 0, 0);
+    --navbar-element-bg1: rgb(255, 79, 79);
+    --navbar-element-bg2: rgb(248, 140, 132);
+
+    --hover-scale: 1;
+    --pos-y: 0px;
+}
+    @property --hover-scale {
+        syntax: '<number>';
+        inherits: false;
+        initial-value: 1;
+    }
+
+    @property --pos-y {
+        syntax: '<length>';
+        inherits: false;
+        initial-value: 0px;
+    }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#main {
+    max-width: 100vw;
+    background-color: var(--main-bg);
+}
+
+#navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+#navbar_container {
+    width: 95%;
+    overflow-x: hidden;
+
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem 0 1rem 0;
+
+    background-color: var(--navbar-bg);
+    border: 5px solid rgb(from var(--navbar-bg) calc(r + 65) g b);
+    border-radius: 10px;
+    margin-top: 1rem;
+    box-shadow: rgb(from var(--navbar-bg) calc(r - 50) g b) 9px 10px, black 0 20px 40px;
+}
+
+.navbar_element {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5dvh;
+    font-weight: bold;
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow: rgb(41, 9, 9, 0.8) 0 1px 8px;
+    border: 3px solid rgb(from var(--navbar-element-bg1) calc(r - 100) calc(g - 55) calc(b - 25));
+    border-radius: 6px;
+    background-color: var(--navbar-element-bg1);
+    box-shadow: var(--navbar-element-bg2) 5px 5px 15px inset;
+
+    max-width: fit-content;
+    padding: 7px;
+    transform: scale(var(--hover-scale));
+
+    transition: 
+        --hover-scale 0.3s ease-in-out,
+        box-shadow 0.2s ease-in;
+}
+
+.navbar_element:hover {
+    --hover-scale: 1.1;
+    box-shadow:
+    var(--navbar-element-bg2) 5px 5px 15px inset,
+        rgba(0, 0, 0, 0.5) 10px 7px 20px;
+}
+
+.navbar_element:active {
+    --hover-scale: 0.9;
+    background-color: rgb(from var(--navbar-bg) calc(r - 55) g b);
+    box-shadow:
+        var(--navbar-element-bg1) -5px -5px 15px inset,
+        rgba(0, 0, 0, 0.5) 10px 7px 20px;
+}
+
+#body {
+    display: flex;
+    flex: 1;
+    height: 50rem;
+}
+
+@media (max-width: 768px), (orientation: portrait) {
+    #navbar_container {
+        width: 80%;
+        overflow-x: auto;
+        box-shadow: rgb(from var(--navbar-bg) calc(r - 50) g b) 0 10px, black 0 20px 40px;
+    }
+
+    .navbar_element {
+        font-size: 1.8dvh;
+    }
+}

@@ -1,16 +1,8 @@
 :root {
-    --main-bg: rgb(255, 177, 177);
-
-    --header-bg: rgb(103, 8, 15);
-
-    --navbar-bg: rgb(117, 0, 0);
-    --navbar-element-bg1: rgb(255, 79, 79);
-    --navbar-element-bg2: rgb(248, 140, 132);
+    --buttons-1: rgb(153, 0, 0);
 
     --input-bg1: rgb(77, 0, 0);
     --input-bg2: rgb(202,130,130);
-
-    --buttons-1: rgb(153, 0, 0);
 
     --footer-bg1: rgb(228, 112, 137);
     --footer-bg2: rgb(248, 140, 132);
@@ -20,6 +12,7 @@
     --footer-alt-deco1: rgb(255, 101, 101);
     --footer-titlebg: rgb(82, 0, 0);
     --footer-contentbg: rgb(255, 55, 48);
+    --footer-modalbg: rgba(112, 8, 8, 0.80);
 
     --hover-scale: 1;
 }
@@ -29,118 +22,6 @@
         inherits: false;
         initial-value: 1;
     }
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--main-bg);
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-#main {
-    max-width: 100vw;
-}
-
-#header {
-    display: flex;
-    flex-direction: column;
-}
-
-#header_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    
-    background-color: var(--header-bg);
-    box-shadow: var(--header-bg) 0 10px 25px;
-}
-
-#gob_logo {
-    width: 176px;
-    height: 80px;
-    max-height: 100%;
-    object-fit: cover;
-    padding: 10px 5px 10px 10px;
-}
-
-#school_logo {
-    max-width: 100%;
-    width: 136;
-    height: 80px;
-    object-fit: cover;
-    padding: 10px 50px 10px 10px;
-}
-
-#navbar {
-    display: flex;
-    flex-direction: column;
-}
-
-#navbar_container {
-    width: 95%;
-    overflow-x: hidden;
-
-    align-self: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 1rem 0 1rem 0;
-
-    background-color: var(--navbar-bg);
-    border: 5px solid rgb(from var(--navbar-bg) calc(r + 65) g b);
-    border-radius: 10px;
-    margin-top: 1rem;
-    box-shadow: rgb(from var(--navbar-bg) calc(r - 50) g b) 9px 10px, black 0 20px 40px;
-}
-
-.navbar_element {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2.5dvh;
-    font-weight: bold;
-    color: whitesmoke;
-    text-decoration: none;
-    text-shadow: rgb(41, 9, 9, 0.8) 0 1px 8px;
-    border: 3px solid rgb(from var(--navbar-element-bg1) calc(r - 100) calc(g - 55) calc(b - 25));
-    border-radius: 6px;
-    background-color: var(--navbar-element-bg1);
-    box-shadow: var(--navbar-element-bg2) 5px 5px 15px inset;
-
-    max-width: fit-content;
-    padding: 7px;
-    transform: scale(var(--hover-scale));
-
-    transition: 
-        --hover-scale 0.3s ease-in-out,
-        box-shadow 0.2s ease-in;
-}
-
-.navbar_element:hover {
-    --hover-scale: 1.1;
-    box-shadow:
-    var(--navbar-element-bg2) 5px 5px 15px inset,
-        rgba(0, 0, 0, 0.5) 10px 7px 20px;
-}
-
-.navbar_element:active {
-    --hover-scale: 0.9;
-    background-color: rgb(from var(--navbar-bg) calc(r - 55) g b);
-    box-shadow:
-        var(--navbar-element-bg1) -5px -5px 15px inset,
-        rgba(0, 0, 0, 0.5) 10px 7px 20px;
-}
-
-#body {
-    display: flex;
-    flex: 1;
-    height: 50rem;
-}
 
 #footer {
     width: 100%;
@@ -202,6 +83,15 @@ body {
         box-shadow 0.5s ease-in;
 }
 
+.site_link {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    align-self: center;
+    justify-self: center;
+    padding: 10px 0;
+}
+
 #subscription {
     display: flex;
     flex-direction: column;
@@ -234,7 +124,7 @@ body {
     box-shadow: rgba(0,0,0,0.6) 0 10px 15px;
 }
 
-#subscription button {
+#submit_email {
     max-width:fit-content;
     transform: scale(var(--hover-scale));
     padding: 8px;
@@ -249,13 +139,13 @@ body {
     border-radius: 10px;
     box-shadow: rgb(116, 1, 16) 0 3px 0 3px;
 
-    transition: 
+    transition:
         --hover-scale 0.3s ease-in,
         box-shadow 0.3s ease-in-out,
         text-shadow 0.4s ease-in;
 }
 
-#subscription button:hover {
+#submit_email:hover {
     --hover-scale: 1.2;
 
     cursor: pointer;
@@ -265,7 +155,7 @@ body {
     text-shadow: rgba(255, 255, 255, 0.5) 0 3px 10px;
 }
 
-#subscription button:active {
+#submit_email:active {
     --hover-scale: 0.9;
 }
 
@@ -317,27 +207,29 @@ body {
     font-size: 0.85rem;
 }
 
-@media (max-width: 768px) {
-    #navbar_container {
-        width: 80%;
-        overflow-x: auto;
-        box-shadow: rgb(from var(--navbar-bg) calc(r - 50) g b) 0 10px, black 0 20px 40px;
-    }
+#modal_mail_registrado {
+    position: fixed;
+    bottom: 0;
+    justify-self: center;
+    width: 12rem;
 
-    .navbar_element {
-        font-size: 1.8dvh;
-    }
+    color: white;
+    background-color: var(--footer-modalbg);
+    padding: 20px;
+    border: 4px solid whitesmoke;
+    border-radius: 20px 0 20px 0;
+    box-shadow: rgba(0,0,0,0.3) 0 5px 15px;
 
-    #gob_logo {
-        max-width: 100%;
-        width: 88px;
-        height: 40px;
-    }
+    transform: translateY(100%);
+    transition:
+        transform 1.3s ease-in-out;
+}
 
-    #school_logo {
-        width: 85;
-        height: 50px;
-    }
+#modal_mail_registrado.show {
+    transform: translateY(-10rem);
+}
+
+@media (max-width: 768px), (orientation: portrait) {
 
     #footer_container {
         background: linear-gradient(220deg, var(--footer-altbg1), var(--footer-altbg2));
@@ -359,7 +251,6 @@ body {
 
     #footer_content thead tr th:not(:only-child){
         display: none;
-        color: green;
     }
 
     .footer_col_title {

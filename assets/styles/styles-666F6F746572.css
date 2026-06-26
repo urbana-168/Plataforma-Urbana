@@ -85,11 +85,18 @@
 
 .site_link {
     display: flex;
-    color: white;
-    text-decoration: none;
     align-self: center;
     justify-self: center;
-    padding: 10px 0;
+    padding: 8px 0;
+    
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.site_link:hover {
+    text-decoration: underline;
 }
 
 #subscription {

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+:root {
+    --bc-fg: rgb(63, 30, 30);
+}
+
+@font-face {
+    font-family: icogobmx;
+    src: url("./fonts/icogobmx.woff?xc1rry");
+    font-weight: 400;
+    font-style: normal;
+}
+
+#breadcrumb_content {
+    padding: 35px 25px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+#breadcrumb_content li {
+    display: inline-block;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 12px;
+    color: var(--bc-fg)
+}
+
+#breadcrumb_content li.active {
+    font-weight: bolder;
+}
+
+#breadcrumb_content li a {
+    color: var(--bc-fg);
+    text-decoration: none;
+}
+
+#breadcrumb_content li a:hover {
+    text-decoration: underline;
+}
+
+#breadcrumb_content li:not(:nth-child(1))::before {
+    content: "\e600";
+    font-family: icogobmx;
+    font-size: 10px;
+    color: #545454;
+    padding: 0 5px;
+}

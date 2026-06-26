@@ -10,9 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Road+Rage&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <link crossorigin="anonymous" media="all" id="style-header" rel="stylesheet" href="./assets/styles/styles-9FDA4357EC.css">
     <link crossorigin="anonymous" media="all" id="style-footer" rel="stylesheet" href="./assets/styles/styles-666F6F746572.css">
+    <link crossorigin="anonymous" media="all" id="style-breadcrumb" rel="stylesheet" href="./assets/styles/styles-62726561646372756D62.css">
     <link rel="stylesheet" href="./assets/styles/styles-B10.css">
 
     <script crossorigin="anonymous" type="module" src="./assets/scripts/utility/verifyEmail.js"></script>
@@ -32,10 +34,19 @@
             </div>
         </div>
 
+        <div id="breadcrumb_container">
+            <ol id="breadcrumb_content">
+                <li>
+                    <a href="./index.html">Inicio</a>
+                </li>
+                <li class="active">Docentes</li>
+            </ol>
+        </div>
+
         <div id="body">
             <div id="docentes_container">
-                <div class="docentes_content" id="doc_grupos">
-                    <h3>Docentes generales (de grupos)</h3>
+                <fieldset class="docentes_content" id="doc_grupos">
+                    <legend>Docentes generales (de grupos)</legend>
                     <div class="perfil_docente" id="doc_1">
                         <svg width="150" height="150" viewBox="0 0 150 150"
                         class="pfp_canvas">
@@ -144,10 +155,10 @@
                             Grado: <p>6°A</p>
                         </span>
                     </div>
-                </div>
+                </fieldset>
                 <hr>
-                <div class="docentes_content" id="doc_materias">
-                    <h3>Docentes Especializados (materias únicas)</h3>
+                <fieldset class="docentes_content" id="doc_materias">
+                    <legend>Docentes Especializados (materias únicas)</legend>
                     <div class="perfil_docente" id="doc_PE">
                         <svg width="150" height="150" viewBox="0 0 150 150"
                         class="pfp_canvas">
@@ -184,7 +195,7 @@
                             Grado: <p>Inglés</p>
                         </span>
                     </div>
-                </div>
+                </fieldset>
             </div>
         </div>
         
@@ -240,7 +251,7 @@
                                 <a href="https://wa.me/..." class="social_media_refs" id="wasap_link">Whatsapp</a>
                             </td>
                             <td class="footer_col_content">
-                                <a href="https://maps.app.goo.gl/kBNmxpm3B3s782jM6" class="social_media_refs" id="maps_linl">Maps</a>
+                                <a href="https://maps.app.goo.gl/fYxd1279yXWZudLr7" class="social_media_refs" id="maps_linl">Maps</a>
                             </td>
                         </tr>
                     </tbody>

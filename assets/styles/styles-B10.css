@@ -37,6 +37,8 @@ body {
 
 #main {
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 #body {
@@ -80,13 +82,12 @@ body {
     padding: 1rem;
 
     background: linear-gradient(210deg, var(--frame-bg21), var(--frame-bg22));
+    border: none;
     border-radius: 5%;
     box-shadow: var(--frame-bg22) 0 0 15px 5px;
 }
 
-.docentes_content h3 {
-    position: absolute;
-
+.docentes_content legend {
     font-family: "Road Rage", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -97,16 +98,10 @@ body {
     padding: 5px;
     border-radius: 10px;
     box-shadow: #000 10px 15px 20px;
-}
 
-.docentes_content:nth-child(1) h3 {
-    top: 25%;
-    left: 10%;
-}
-
-.docentes_content:nth-child(3) h3 {
-    top: 175%;
-    left: 10%;
+    display: inline-block;
+    transform: translateY(-25%);
+    margin-bottom: -15px;
 }
 
 .perfil_docente {
@@ -156,4 +151,30 @@ body {
     font-weight: normal;
 
     padding: 0 0 10px 15px;
+}
+
+@media (max-width: 768px), (orientation: portrait) {
+    #docentes_container {
+        width: 70%;
+    }
+
+    .docentes_content {
+        width: 80%;
+        box-shadow: none;
+        border-radius: 50px;
+    }
+
+    .docentes_content legend {
+        font-size: 30px;
+    }
+
+    .perfil_docente {
+        margin: 20px 20px;
+    }
+
+    .pfp_canvas {
+        box-shadow:
+            rgb(95, 0, 0) 0 0 10px 15px inset,
+            var(--pfp-bg) 0 0 0 15px inset;
+    }
 }

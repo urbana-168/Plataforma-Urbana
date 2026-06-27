@@ -75,6 +75,7 @@ body {
 
 .docentes_content {
     width: calc(100% - 4rem);
+    height: fit-content;
     margin: 1rem 2rem;
     padding: 2rem;
     box-sizing: border-box;
@@ -86,9 +87,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(180deg, var(--frame-bg21), var(--frame-bg22));
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-color: var(--frame-bg21);
     border: none;
     border-radius: 20px;
     box-shadow: var(--frame-bg22) 0 0 15px 5px;
@@ -162,6 +161,7 @@ body {
 @media (max-width: 768px), (orientation: portrait) {
     #docentes_container {
         width: calc(100% - 8rem);
+        border-radius: 20px;
     }
 
     .docentes_content {

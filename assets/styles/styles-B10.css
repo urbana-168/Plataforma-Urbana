@@ -6,7 +6,7 @@
     --frame-border1: rgb(70, 12, 12);
 
     --frame-bg21: rgb(255, 150, 150);
-    --frame-bg22: rgb(226, 142, 156);
+    --frame-bg22: rgb(196, 109, 123);
 
     --pfp-bg: rgb(65, 26, 26);
     --pfp-fg: rgb(209, 156, 156);
@@ -84,9 +84,9 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(260deg, var(--frame-bg21), var(--frame-bg22));
+    background: linear-gradient(180deg, var(--frame-bg21), var(--frame-bg22));
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     border: none;
     border-radius: 20px;
     box-shadow: var(--frame-bg22) 0 0 15px 5px;

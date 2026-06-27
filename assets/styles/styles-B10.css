@@ -85,6 +85,8 @@ body {
     align-items: center;
 
     background: linear-gradient(260deg, var(--frame-bg21), var(--frame-bg22));
+    background-repeat: no-repeat;
+    background-size: cover;
     border: none;
     border-radius: 20px;
     box-shadow: var(--frame-bg22) 0 0 15px 5px;

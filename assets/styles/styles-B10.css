@@ -84,9 +84,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(190deg, var(--frame-bg21), var(--frame-bg22));
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(260deg, var(--frame-bg21), var(--frame-bg22));
     border: none;
     border-radius: 20px;
     box-shadow: var(--frame-bg22) 0 0 15px 5px;
@@ -106,7 +104,6 @@ body {
 
     display: inline-block;
     transform: translateY(-25%);
-    margin-bottom: -15px;
 }
 
 .perfil_docente {

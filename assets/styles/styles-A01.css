@@ -60,7 +60,7 @@ body {
 }
 
 .navbar_element {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 2.5dvh;
     font-weight: bold;
     color: whitesmoke;

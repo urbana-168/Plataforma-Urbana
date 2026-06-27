@@ -57,7 +57,7 @@ body {
     margin: 0 auto 3rem auto;
     padding: 1rem;
 
-    background: linear-gradient(70deg, var(--frame-bg11), var(--frame-bg12));
+    background: linear-gradient(120deg, var(--frame-bg11), var(--frame-bg12));
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 20px 0 20px 0;
@@ -75,10 +75,12 @@ body {
 
 .docentes_content {
     width: calc(100% - 4rem);
-    margin: 2rem;
-    padding: 1rem;
+    margin: 1rem 2rem;
+    padding: 2rem;
     box-sizing: border-box;
+
     display: flex;
+    max-height: fit-content;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
@@ -159,12 +161,13 @@ body {
 
 @media (max-width: 768px), (orientation: portrait) {
     #docentes_container {
-        width: 70%;
+        width: calc(100% - 8rem);
     }
 
     .docentes_content {
         width: 80%;
-        box-shadow: none;
+        margin: 0;
+        padding: 0;
     }
 
     .docentes_content legend {
